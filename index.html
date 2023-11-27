@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #searchForm {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 8px 200px;
+        }
+
+        input[type="submit"] {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="searchForm">
+        <img src="logo.png" alt="Pan Artur">
+        <br><br>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="">
+            <br><br><br>
+            <input type="submit" value="Na siebie">
+        </form>
+    </div>
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchQuery = document.getElementById("searchInput").value;
+            window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(searchQuery)}`;
+        });
+    </script>
+</body>
+</html>
